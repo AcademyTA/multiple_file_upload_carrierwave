@@ -10,6 +10,9 @@
     <%= f.text_field :description %>
   </div>
   <div>
+    <%= f.file_field :photos, multiple: true %>
+  </div>
+  <div>
     <%= f.submit %>
   </div>
 <% end %>
@@ -20,5 +23,10 @@
   </div>
   <div>
     <%= product.description %>
+  </div>
+  <div>
+    <% product.photos.each do |photo| %>
+      <%= image_tag(photo, size: '150') %>
+    <% end %>
   </div>
 <% end %>
